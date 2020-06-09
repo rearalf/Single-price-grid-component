@@ -1,0 +1,151 @@
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+:root {
+	--Cyan: hsl(179, 62%, 43%);
+	--BrightYellow: hsl(71, 73%, 54%);
+	--LightGray: hsl(204, 43%, 93%);
+	--GrayishBlue: hsl(218, 22%, 67%);
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: 'Karla', sans-serif;
+	background-color: var(--LightGray);
+}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	grid-template-rows: repeat(2, minmax(0, 1fr));
+	grid-template-areas: "header header" "col-1  col-2";
+	width: 700px;
+	height: 600px;
+	margin: 35px auto;
+}
+
+.header {
+	grid-area: header;
+	background-color: #fff;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.header .title {
+	color: var(--Cyan);
+	margin: 0;
+}
+
+.header h2 {
+	color: var(--BrightYellow);
+}
+
+.header p {
+	color: hsl(212, 11%, 72%);
+	font-size: 1.1em;
+	font-weight: 400;
+	line-height: 1.8;
+}
+
+.col-1,
+.col-2,
+.header {
+	color: var(--LightGray);
+	padding: 50px;
+}
+
+.col-1 {
+	grid-area: col-1;
+	background-color: var(--Cyan);
+	border-bottom-left-radius: 10px;
+}
+
+.col-1 h2,
+.col-2 h2 {
+	margin: 0;
+	padding-bottom: 15px;
+}
+
+.text-col-1 p:first-child {
+	margin-top: 0;
+	color: hsl(180, 55%, 65%);
+}
+
+.text-col-1 p span {
+	font-weight: 700;
+	font-size: 2em;
+	color: var(--LightGray);
+}
+
+.text-col-1 p {
+	color: var(--LightGray);
+	font-weight: 700;
+	font-size: 1em;
+}
+
+.col-1 button {
+	background-color: var(--BrightYellow);
+	color: var(--LightGray);
+	border: none;
+	width: 100%;
+	height: 50px;
+	font-size: 1.2em;
+	font-weight: 700;
+	border-radius: 10px;
+	position: relative;
+	top: 18px;
+	cursor: pointer;
+}
+
+.col-1 button:focus{
+	outline: none;
+}
+
+.col-1 button:hover{
+	background-color: hsl(71, 73%, 50%);
+}
+
+.col-2 {
+	grid-area: col-2;
+	background-color: hsl(179, 47%, 52%);
+	border-bottom-right-radius: 10px;
+}
+
+.col-2 li {
+	color: var(--LightGray);
+	margin: 4px 0;
+	list-style: none;
+}
+
+@media (max-width: 768px) {
+	.container {
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		grid-template-rows: auto;
+		grid-template-areas: "header" "col-1" "col-2";
+		height: auto;
+		width: auto;
+	}
+
+	.col-2 {
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+	}
+
+	.col-1 {
+		border-bottom-left-radius: 0;
+	}
+
+	.col-1,
+	.col-2,
+	.header {
+		padding: 30px;
+	}
+}
